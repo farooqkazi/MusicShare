@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_content_root"
+    android:background="@color/md_white"
+    android:fitsSystemWindows="false"
+    tools:context="com.lob.music_share.activity.ContentActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                android:background="@color/colorPrimary">
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:minHeight="?attr/actionBarSize">
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:id="@+id/profile_pic_toolbar"/>
+                    <TextView
+                        android:id="@+id/title_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#fff"
+                        android:textSize="22sp"
+                        android:includeFontPadding="false"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="40dp"
+                        android:text="@string/app_name" />
+                </android.support.v7.widget.Toolbar>
+            </FrameLayout>
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="#eee">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:clipToPadding="false"
+            android:visibility="gone" />
+
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/progress_wheel"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible"
+            wheel:matProg_barColor="@color/colorPrimary"
+            wheel:matProg_progressIndeterminate="true" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:id="@+id/tip_container"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/search_grey"
+                android:id="@+id/no_image_view"
+                android:layout_marginTop="146dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/start_following"
+                android:id="@+id/no_text_view"
+                android:textColor="#626262"
+                android:textSize="24dp"
+                android:gravity="center"
+                android:layout_below="@+id/no_image_view"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/popup_container">
+    </FrameLayout>
+</android.support.design.widget.CoordinatorLayout>
